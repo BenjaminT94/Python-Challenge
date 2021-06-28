@@ -1,12 +1,12 @@
 import os
 import csv
-file = os.path.join("..", "Resources","budget_data.csv")
+file = os.path.join('..', 'Resources','budget_data.csv')
 # Using Exercise CSV Read, opening the source data file
-with open("budget_data.csv","r") as csvfile:
-    csvreader = csv.reader(csvfile, delimiter = ",")
-# Skipping the first row as it's the row for column headers
+with open('budget_data.csv','r') as csvfile:
+    csvreader = csv.reader(csvfile, delimiter = ',')
+    # Skipping the first row as it's the row for column headers
     header = next(csvreader)
-# Creating lists to track values for the output
+    # Creating lists to track values for the output
     months = []
     profit_loss = []
     profit_change = []
@@ -29,5 +29,3 @@ print(f"Total: {sum(profit_loss)}")
 print(f"Average Change: {int(average_change)}")
 print(f"Greatest Increase: {months[greatest_increase]} {(str(max(profit_change)))}")
 print(f"Greatest Decrease: {months[greatest_decrease]} {(str(min(profit_change)))}")
-
-
