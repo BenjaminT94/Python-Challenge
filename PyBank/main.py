@@ -10,17 +10,17 @@ with open('budget_data.csv','r') as csvfile:
     months = []
     profit_loss = []
     profit_change = []
-# Assigning a variable to calculate the average change of profit in the entire file
-    average_change = sum(profit_change) / len(profit_change)
-# Tracking the index of the change in profit each month plus 1
-    increase = profit_change.index(max(profit_change)) + 1
-    decrease = profit_change.index(min(profit_change)) + 1
+    # Assigning a variable to calculate the average change of profit in the entire file  
+    average_change = sum(profit_change) / len(str(profit_change))
 # Using a for loop to now append values to our lists
+    for x in range(len(profit_change)-1):
+        profit_change.append(profit_change[x+1]-profit_change[x])
+        # Tracking the index of the change in profit each month plus 1
+        increase = profit_change.index(max(profit_change)) + 1
+        decrease = profit_change.index(min(profit_change)) + 1
     for row in csvreader:
         months.append(row[0])
-        profit_loss.append(int(row[1])
-    for x in range(len(profit_loss)-1):
-        profit_change.append(profit_change[x+1]-profit_loss[x])
+        profit_loss.append(int(row[1]))
 print("Financial Analysis")
 print("--------------------")
 print(f"Total Months: {len(months)}")
