@@ -29,3 +29,6 @@ print(f"Total: {sum(profit_loss)}")
 print(f"Average Change: {int(average_change)}")
 print(f"Greatest Increase: {months[greatest_increase]} {(str(max(profit_change)))}")
 print(f"Greatest Decrease: {months[greatest_decrease]} {(str(min(profit_change)))}")
+newfile = os.path.join('new.txt')
+with open(newfile,"w") as new:
+    
