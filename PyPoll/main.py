@@ -1,7 +1,7 @@
 import os
 import csv
-data = os.path.join('..','Resources','election_data.csv')
-with open('election_data.csv','r') as csvfile:
+input_file = os.path.join("..", "Resources", "election_data.csv")
+with open("election_data.csv","r") as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ',')
     header = next(csvreader)
     votes_total = 0
